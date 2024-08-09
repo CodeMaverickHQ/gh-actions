@@ -14,7 +14,7 @@ jobs:
       - name: get env
         shell: bash
         run: |
-          arrayKing=( $env.king_of_db $env.kind_of_db )
+          arrayKing=( ${{ env.king_of_db }} ${{ env.kind_of_db }})
           for king in "${arrayKing[@]}"
           do
             echo $king
