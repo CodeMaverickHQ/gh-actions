@@ -7,4 +7,15 @@ jobs:
       - name: Echo greeting
         run: echo "hello world"
       - name: goodbye
-        run: echo "Done byeee"
+        run: |
+          echo "king_of_db" >> $GITHUB_ENV
+          echo "kind_of_db" >> $GITHUB_ENV
+        shell: bash
+      - name: get env
+        shell: bash
+        run: |
+          arrayKing=( $env.king_of_db $env.kind_of_db )
+          for king in "${arrayKing[@]}"
+          do
+            echo $king
+          done
