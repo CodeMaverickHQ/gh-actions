@@ -8,14 +8,14 @@ jobs:
         run: echo "hello world"
       - name: goodbye
         run: |
-          echo "king_of_db" >> $GITHUB_ENV
-          echo "kind_of_db" >> $GITHUB_ENV
+          echo "king"="king_of_db" >> $GITHUB_ENV
+          echo "kind"="kind_of_db" >> $GITHUB_ENV
         shell: bash
       - name: get env
         shell: bash
         run: |
-          arrayKing=( ${{ env.king_of_db }} ${{ env.kind_of_db }})
-          for king in "${arrayKing[@]}"
+          arrayKing=( ${{ env.king }} ${{ env.kind }})
+          for kin in "${arrayKing[@]}"
           do
-            echo $king
+            echo $kin
           done
